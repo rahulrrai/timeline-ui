@@ -51,3 +51,7 @@ deploy:
   artifacts:
     paths:
     - build
+  only:
+    refs:
+      - tags
+      - master
