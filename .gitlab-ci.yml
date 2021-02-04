@@ -31,7 +31,7 @@ build:
   dependencies:
     - install
 
-.deploy:
+deploy:
   stage: deploy
   script:
     - git clone --depth 1 https://rahulrrai:$GITHUB_ACCESS_TOKEN@github.com/rahulrrai/rahulrrai.github.io.git
