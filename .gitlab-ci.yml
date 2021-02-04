@@ -5,8 +5,12 @@ stages:
   - build
   - deploy
 
+before_script:
+  - PACKAGE_VERSION=$(node -p "require('./package.json').version")
+
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  username: "rahulrrai"
 
 install:
   stage: install
@@ -31,18 +35,18 @@ build:
   dependencies:
     - install
 
-deploy:
+.deploy:
   stage: deploy
   script:
-    - git clone --depth 1 https://rahulrrai:$GITHUB_ACCESS_TOKEN@github.com/rahulrrai/rahulrrai.github.io.git
-    - mkdir rahulrrai.github.io.new
-    - cp -a rahulrrai.github.io/.git rahulrrai.github.io.new/.git
-    - cp -a public/* rahulrrai.github.io.new
-    - cd rahulrrai.github.io.new
+    - git clone --depth 1 https://$username:$GITHUB_ACCESS_TOKEN@github.com/$username/$username.github.io.git
+    - mkdir $username.github.io.new
+    - cp -a $username.github.io/.git $username.github.io.new/.git
+    - cp -a build/* $username.github.io.new
+    - cd $username.github.io.new
     - git config user.email "rahulrrai19@gmail.com"
     - git config --global user.name "Rahul Rai"
     - git add -A
-    - git diff-index --quiet HEAD || git commit -m "$CI_SERVER_NAME $CI_PIPELINE_ID"
+    - git diff-index --quiet HEAD || git commit -m "$PACKAGE_VERSION $CI_PIPELINE_ID"
     - git push
   artifacts:
     paths:
