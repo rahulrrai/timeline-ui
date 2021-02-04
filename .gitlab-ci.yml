@@ -46,4 +46,4 @@ deploy:
     - git push
   artifacts:
     paths:
-    - public
+    - build
