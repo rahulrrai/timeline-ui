@@ -35,7 +35,7 @@ build:
   dependencies:
     - install
 
-.deploy:
+deploy:
   stage: deploy
   script:
     - git clone --depth 1 https://$username:$GITHUB_ACCESS_TOKEN@github.com/$username/$username.github.io.git
