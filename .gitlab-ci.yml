@@ -39,11 +39,6 @@ build:
   dependencies:
     - install
 
-test:
-  stage: test
-  dependencies:
-    - install
-
 deploy:
   stage: deploy
   script:
