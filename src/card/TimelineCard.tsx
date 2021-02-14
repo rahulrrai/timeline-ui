@@ -42,14 +42,18 @@ function TimelineCard() {
         </CardContent>
       </CardActionArea>
 
-      <CardActions>
-        <Button size="small" color="primary">
-          More..
-        </Button>
-        <Button size="small" color="primary">
-          <EditIcon />
-        </Button>
-      </CardActions>
+      <div className="card-bottom-section-container">
+        <div className="timelineCard-more-button">
+          <Button size="small" color="primary">
+            More..
+          </Button>
+        </div>
+        <div className="timelineCard-edit-icon">
+          <Button size="small" color="primary">
+            <EditIcon />
+          </Button>
+        </div>
+      </div>
     </Card>
   );
 }
