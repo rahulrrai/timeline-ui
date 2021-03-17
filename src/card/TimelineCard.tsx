@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import "./TimelineCard.css";
 import EditIcon from "@material-ui/icons/Edit";
 
-function TimelineCard() {
+function TimelineCard({ cardData }: { cardData: any }) {
   const useStyles = makeStyles({
     root: {
       maxWidth: 400,
@@ -21,23 +21,19 @@ function TimelineCard() {
   });
   const classes = useStyles();
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} style={{ textAlign: "left" }}>
       <CardActionArea>
-        <Typography className="timeline-header">29-March-2020</Typography>
         <CardMedia
           className={classes.media}
-          image="https://sn3302files.storage.live.com/y4mSj-9wUYuOtvBtoa4TyetmmcmluPYhrE6-V3qzUKP6lbsjYH-DI7B_IRwB_XtC3n9DN7IlyPBSJ2ko8IDyJrY50gcKaZM7HgNFPwGIDijdHHYhLNLOGVLGxdIqOVlRAUX8DPgz2ekDXAa2p2qaTGyXX-ME601E8oj268nNPat2yRmrLiWgESOSq_BEDMQUqQ8?width=660&height=495&cropmode=none"
+          image={cardData.headerImageUrl}
           title="Gang of Four"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            First Day - Gang of 4
+            {cardData.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            We joined IRIS as a Fresher in Year 2012. Eknath and Dipak joined
-            first, then Deepak, and Rahul was the last one to join. and we all
-            will always agree that the year 2012 to 2014 was one of the best
-            years of our life
+            {cardData.description}
           </Typography>
         </CardContent>
       </CardActionArea>
