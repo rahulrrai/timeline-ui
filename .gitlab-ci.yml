@@ -32,6 +32,7 @@ build:
 
 deploy:
   stage: deploy
+  image: python:3.6
   script:
     - pip install awscli
     - aws configure set region us-east-1
