@@ -13,9 +13,6 @@ cache:
 before_script:
   - npm ci --cache .npm --prefer-offline
 
-before_script:
-  - PACKAGE_VERSION=$(node -p "require('./package.json').version")
-
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   username: "rahulrrai"
