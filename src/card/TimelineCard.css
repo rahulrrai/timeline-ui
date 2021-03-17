@@ -1,8 +1,15 @@
-.timeline-header {
-  position: absolute;
-  color: white;
-  background-color: crimson;
-  padding-right: 10px;
-  padding-left: 10px;
-  right: 0px;
+.timelineCard-edit-icon {
+  width: 15%;
+}
+
+.timelineCard-more-button {
+  width: 85%;
+}
+
+.card-bottom-section-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 2%;
+  padding-right: 2%;
 }
