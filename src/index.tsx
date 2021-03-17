@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import TimelineCard from "./card/TimelineCard";
+import TimelineCore from "./timeline/TimelineCore";
 
 ReactDOM.render(
   <React.StrictMode>
-    <TimelineCard />
+    <TimelineCore />
   </React.StrictMode>,
   document.getElementById("root")
 );
